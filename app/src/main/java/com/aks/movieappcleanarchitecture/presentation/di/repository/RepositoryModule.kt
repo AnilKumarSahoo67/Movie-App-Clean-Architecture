@@ -1,7 +1,7 @@
 package com.aks.movieappcleanarchitecture.presentation.di.repository
 
-import com.aks.movieappcleanarchitecture.data.repository.datasource.RemoteDataSource
-import com.aks.movieappcleanarchitecture.data.repository.repositoryimpl.RepositoryImpl
+import com.aks.movieappcleanarchitecture.data.repo.datasource.RemoteDataSource
+import com.aks.movieappcleanarchitecture.data.repo.repositoryimpl.RepositoryImpl
 import com.aks.movieappcleanarchitecture.domain.repository.Repository
 import dagger.Module
 import dagger.Provides
@@ -15,7 +15,7 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideRepositoryModule(remoteDataSource: RemoteDataSource) : Repository{
+    fun provideRepositoryModule (remoteDataSource: RemoteDataSource) : Repository{
         return RepositoryImpl(remoteDataSource)
     }
 }
