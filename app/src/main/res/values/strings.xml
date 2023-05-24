@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MovieAppCleanArchitecture</string>
+<!--    <string name="app_name">MovieAppCleanArchitecture</string>-->
+    <string name="app_name">Assignment App</string>
+    <string name="bannerimage">BannerImage</string>
 </resources>

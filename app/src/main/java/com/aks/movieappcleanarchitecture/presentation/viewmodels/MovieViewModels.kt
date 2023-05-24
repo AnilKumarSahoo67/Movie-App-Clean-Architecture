@@ -3,6 +3,10 @@ package com.aks.movieappcleanarchitecture.presentation.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.aks.movieappcleanarchitecture.data.model.GetBreakingNewsResponse
+import com.aks.movieappcleanarchitecture.data.model.GetNowPlayingMovieResponse
+import com.aks.movieappcleanarchitecture.data.model.GetTopRatedMovieResponse
+import com.aks.movieappcleanarchitecture.data.model.ResponseCheckingModel
 import com.aks.movieappcleanarchitecture.data.repo.resource.NetworkResource
 import com.aks.movieappcleanarchitecture.domain.usecases.GetBreakingNewsUseCases
 import com.aks.movieappcleanarchitecture.domain.usecases.GetNowPlayingMovieUseCases
@@ -17,10 +21,15 @@ class MovieViewModels(
     private val getBreakingNewsUseCases: GetBreakingNewsUseCases
 ) : ViewModel() {
 
+    val movieResponse : MutableLiveData<ResponseCheckingModel> = MutableLiveData()
+    val getTopRatedMovieResponse = MutableLiveData<Boolean>()
+    val getNowPlayingMovieResponse = MutableLiveData<Boolean>()
+    val getBreakingNewsResponse = MutableLiveData<Boolean>()
 
-    val getTopRatedMovie: MutableLiveData<NetworkResource<ResponseBody>> = MutableLiveData()
-    val getNowPlayingMovie: MutableLiveData<NetworkResource<ResponseBody>> = MutableLiveData()
-    val getBreakingNews: MutableLiveData<NetworkResource<ResponseBody>> = MutableLiveData()
+
+    val getTopRatedMovie: MutableLiveData<NetworkResource<GetTopRatedMovieResponse>> = MutableLiveData()
+    val getNowPlayingMovie: MutableLiveData<NetworkResource<GetNowPlayingMovieResponse>> = MutableLiveData()
+    val getBreakingNews: MutableLiveData<NetworkResource<GetBreakingNewsResponse>> = MutableLiveData()
 
 
     fun getNowPlayingMovie(pageNum: Int) {

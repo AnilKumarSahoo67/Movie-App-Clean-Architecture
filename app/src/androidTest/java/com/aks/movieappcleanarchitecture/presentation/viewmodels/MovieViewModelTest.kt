@@ -11,13 +11,13 @@ import javax.inject.Inject
 
 @RunWith(AndroidJUnit4::class)
 internal class MovieViewModelTest : TestCase(){
-    private lateinit var viewModel: MovieViewModel
-    @Inject
-    lateinit var movieViewModelProviderFactory : MovieViewModelProviderFactory
-
-    @Before
-    override fun setUp() {
-        super.setUp()
-        val context  = ApplicationProvider.getApplicationContext<Context>()
-    }
+//    private lateinit var viewModel: MovieViewModel
+//    @Inject
+//    lateinit var movieViewModelProviderFactory : MovieViewModelProviderFactory
+//
+//    @Before
+//    override fun setUp() {
+//        super.setUp()
+//        val context  = ApplicationProvider.getApplicationContext<Context>()
+//    }
 }
